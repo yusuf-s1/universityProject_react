@@ -34,6 +34,7 @@ const resources = {
       keepMeLoggedIn: 'Keep Me Logged In',
       signIn: 'Sign In',
       /* academic */
+      calendar: 'Academic Calendar',
     },
   },
   tr: {
@@ -65,6 +66,7 @@ const resources = {
       keepMeLoggedIn: 'Beni Hatırla',
       signIn: 'Giriş Yap',
       /* academic */
+      calendar: 'Akademik Takvim',
     },
   },
 };

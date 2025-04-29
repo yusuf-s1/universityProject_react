@@ -6,6 +6,7 @@ import Main from './components/Main';
 import SignIn from './pages/SignIn';
 import University from './pages/University';
 import Academic from './pages/Academic';
+import Calendar from './pages/Calendar';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/sign" element={<SignIn />} />
           <Route path="/university" element={<University />} />
           <Route path="/academic" element={<Academic />} />
+          <Route path="/calendar" element={<Calendar />} />
         </Routes>
         <Footer />
       </main>

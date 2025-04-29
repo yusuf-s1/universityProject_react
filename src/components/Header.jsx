@@ -98,8 +98,8 @@ export default function Header() {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/sign" className="dropdown-item" href="#">
-                        {t('academic')}
+                      <Link to="/calendar" className="dropdown-item" href="#">
+                        {t('calendar')}
                       </Link>
                     </li>
                   </ul>
