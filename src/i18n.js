@@ -33,6 +33,7 @@ const resources = {
       password: 'Password',
       keepMeLoggedIn: 'Keep Me Logged In',
       signIn: 'Sign In',
+      /* academic */
     },
   },
   tr: {
@@ -63,6 +64,7 @@ const resources = {
       password: 'Şifre',
       keepMeLoggedIn: 'Beni Hatırla',
       signIn: 'Giriş Yap',
+      /* academic */
     },
   },
 };
