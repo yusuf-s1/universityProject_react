@@ -143,27 +143,49 @@ export default function Header() {
                   padding: '1rem',
                 }}
               >
-                {NewsData.map((news) => {
-                  return news.name
-                    .toLowerCase()
-                    .includes(search.toLowerCase()) ? (
-                    <Link
-                      key={news.id}
-                      to={`/news/${news.id}`}
-                      className="d-flex justify-content-between align-items-center, text-decoration-none"
-                      style={{ color: 'black' }}
-                      onClick={() => {
-                        setSearch('');
-                        searchBar.value = '';
-                      }}
-                    >
-                      {news.name}
-                      <FaExternalLinkAlt />
-                    </Link>
-                  ) : (
-                    ''
-                  );
-                })}
+                {t.language == 'tr'
+                  ? NewsData.map((news) => {
+                      return news.name
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) ? (
+                        <Link
+                          key={news.id}
+                          to={`/news/${news.id}`}
+                          className="d-flex justify-content-between align-items-center, text-decoration-none"
+                          style={{ color: 'black' }}
+                          onClick={() => {
+                            setSearch('');
+                            searchBar.value = '';
+                          }}
+                        >
+                          {news.name}
+                          <FaExternalLinkAlt />
+                        </Link>
+                      ) : (
+                        ''
+                      );
+                    })
+                  : NewsData.map((news) => {
+                      return news.name_en
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) ? (
+                        <Link
+                          key={news.id}
+                          to={`/news/${news.id}`}
+                          className="d-flex justify-content-between align-items-center, text-decoration-none"
+                          style={{ color: 'black' }}
+                          onClick={() => {
+                            setSearch('');
+                            searchBar.value = '';
+                          }}
+                        >
+                          {news.name_en}
+                          <FaExternalLinkAlt />
+                        </Link>
+                      ) : (
+                        ''
+                      );
+                    })}
               </div>
               <form className="d-flex ms-lg-5" style={{ position: 'relative' }}>
                 <input
