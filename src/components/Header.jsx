@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-import { CiSearch } from 'react-icons/ci';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import brand from '../assets/brand.png';
+
 import LanguageSelector from './language-selector';
+
+import { CiSearch } from 'react-icons/ci';
 import { GrLanguage } from 'react-icons/gr';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+
+import { NewsData } from '../NewsData';
+
 export default function Header() {
   const { t } = useTranslation();
+
+  const [search, setSearch] = useState('');
+
+  let searchBar = document.getElementById('searchBar');
 
   /* const [bg, setBg] = useState(false);
   {
@@ -51,17 +61,14 @@ export default function Header() {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
-              onClick={() => {
-                setBg(!bg);
-              }}
             >
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
-              className="collapse navbar-collapse justify-content-end"
+              className="collapse navbar-collapse justify-content-end p-5 p-sm-0"
               id="navbarSupportedContent"
             >
-              <ul className="navbar-nav mb-2 mb-lg-0">
+              <ul className="navbar-nav mb-2 mb-lg-0 ">
                 <li className="nav-item">
                   <Link
                     to="/university"
@@ -105,7 +112,7 @@ export default function Header() {
                   </ul>
                 </li>
               </ul>
-              <div className="nav-item dropdown">
+              <div className="nav-item dropdown position-relative">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -120,12 +127,51 @@ export default function Header() {
                   <LanguageSelector />
                 </div>
               </div>
-              <form className="d-flex ms-lg-5">
+              <div
+                className={search.length > 0 ? 'd-block' : 'd-none'}
+                style={{
+                  position: 'absolute',
+                  bottom: '-140px',
+                  right: '0',
+                  width: '75%',
+                  maxHeight: '560px',
+                  overflowY: true,
+                  backgroundColor: 'white',
+                  color: 'black',
+                  zIndex: '99',
+                  borderRadius: '.5rem',
+                  padding: '1rem',
+                }}
+              >
+                {NewsData.map((news) => {
+                  return news.name
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ? (
+                    <Link
+                      key={news.id}
+                      to={`/news/${news.id}`}
+                      className="d-flex justify-content-between align-items-center, text-decoration-none"
+                      style={{ color: 'black' }}
+                      onClick={() => {
+                        setSearch('');
+                        searchBar.value = '';
+                      }}
+                    >
+                      {news.name}
+                      <FaExternalLinkAlt />
+                    </Link>
+                  ) : (
+                    ''
+                  );
+                })}
+              </div>
+              <form className="d-flex ms-lg-5" style={{ position: 'relative' }}>
                 <input
                   className="form-control me-2 w-100 bg-transparent"
                   type="search"
+                  id="searchBar"
                   placeholder={t('search')}
-                  aria-label="Search"
+                  onChange={(e) => setSearch(e.target.value)}
                 />
                 <button className="btn btn-outline-success fs-4" type="submit">
                   <CiSearch />

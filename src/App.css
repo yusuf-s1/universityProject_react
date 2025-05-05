@@ -1,0 +1,12 @@
+.card {
+  background-color: #eee;
+  color: black;
+  border-bottom: 2px solid blue;
+  border-radius: 0.5rem;
+}
+
+.card:hover {
+  background-color: #ccc;
+  color: white;
+  border-bottom-color: transparent;
+}

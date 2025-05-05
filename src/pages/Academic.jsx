@@ -1,8 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import academic from '../assets/academic.jpeg';
 import campus from '../assets/campus.jpg';
 import carousel2 from '../assets/carousel2.jpg';
+
 export default function Academic() {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="">
@@ -13,7 +18,7 @@ export default function Academic() {
             style={{ height: '320px' }}
           ></img>
           <h2 className="position-absolute top-50 translate-y text-center text-light w-100 display-1">
-            Akademik
+            {t('academic')}
           </h2>
         </div>
         <div className="container-lg mt-5 mx-auto">
@@ -29,23 +34,23 @@ export default function Academic() {
             </div>
             <div className="col-12 col-sm-6 p-2">
               <h2 className="text-center text-secondary my-3 mt-sm-0">
-                Fakülteler
+                {t('faculties')}
               </h2>
               <div className="row">
                 <div className="col-12 col-sm-6">
                   <ul className="ms-3 d-flex flex-column gap-2">
-                    <li>Tıp Fakültesi</li>
-                    <li>Sağlık Bilimleri Fakültesi</li>
-                    <li>Mühendislik Fakültesi</li>
-                    <li>Mimarlık Fakültesi</li>
+                    <li>{t('med')}</li>
+                    <li>{t('health')}</li>
+                    <li>{t('engineer')}</li>
+                    <li>{t('arc')}</li>
                   </ul>
                 </div>
                 <div className="col-12 col-sm-6">
                   <ul className="ms-3 d-flex flex-column gap-2">
-                    <li>İşletme Fakültesi</li>
-                    <li>Güzel Sanatlar Fakültesi</li>
-                    <li>Fen Edebiyat Fakültesi</li>
-                    <li>Spor Bilimleri Fakültesi</li>
+                    <li>{t('business')}</li>
+                    <li>{t('fineart')}</li>
+                    <li>{t('science')}</li>
+                    <li>{t('sport')}</li>
                   </ul>
                 </div>
               </div>
@@ -64,20 +69,20 @@ export default function Academic() {
             </div>
             <div className="col-12 col-sm-6 p-2">
               <h2 className="text-center text-secondary my-3 mt-sm-0">
-                Yüksekokullar
+                {t('college')}
               </h2>
               <div className="row">
                 <div className="col-12 col-sm-6">
                   <ul className="ms-3 d-flex flex-column gap-2">
-                    <li>Yabancı Diller Yüksekokulu</li>
-                    <li>Konservatuvar</li>
-                    <li>Hemşirelik Yüksekokulu</li>
-                    <li>Beden Eğitimi ve Spor Yüksekokulu</li>
+                    <li>{t('foreign')}</li>
+                    <li>{t('conservatory')}</li>
+                    <li>{t('nursing')}</li>
+                    <li>{t('physical')}</li>
                   </ul>
                 </div>
                 <div className="col-12 col-sm-6">
                   <ul className="ms-3 d-flex flex-column gap-2">
-                    <li>Meslek Yüksek Okulu</li>
+                    <li>{t('vocational')}</li>
                   </ul>
                 </div>
               </div>

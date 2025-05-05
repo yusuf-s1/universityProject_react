@@ -56,7 +56,7 @@ export default function Carousel() {
                 className="d-block"
                 style={{
                   width: '100%',
-                  maxHeight: '560px',
+                  maxHeight: '620px',
                 }}
                 alt=""
               />
@@ -65,7 +65,7 @@ export default function Carousel() {
               <img
                 src={carousel2}
                 className="d-block"
-                style={{ width: '100%', maxHeight: '560px' }}
+                style={{ width: '100%', maxHeight: '620px' }}
                 alt=""
               />
             </div>
@@ -73,7 +73,7 @@ export default function Carousel() {
               <img
                 src={carousel3}
                 className="d-block"
-                style={{ width: '100%', maxHeight: '560px' }}
+                style={{ width: '100%', maxHeight: '620px' }}
                 alt=""
               />
             </div>
@@ -81,7 +81,7 @@ export default function Carousel() {
               <img
                 src={carousel4}
                 className="d-block"
-                style={{ width: '100%', maxHeight: '560px' }}
+                style={{ width: '100%', maxHeight: '620px' }}
                 alt=""
               />
             </div>
@@ -89,7 +89,7 @@ export default function Carousel() {
               <img
                 src={carousel5}
                 className="d-block"
-                style={{ width: '100%', maxHeight: '560px' }}
+                style={{ width: '100%', maxHeight: '620px' }}
                 alt=""
               />
             </div>
